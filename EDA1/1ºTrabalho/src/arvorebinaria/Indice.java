@@ -89,11 +89,8 @@ public class Indice{
 						capitulo = new Capitulo(token.substring(0, token.length()));
 						if (ABP.contains(capitulo)) {
 							capitulo = ABP.find(capitulo);
-							ABP.insere(capitulo);
 						}
-						else{
-							ABP.insere(capitulo);
-						}
+						ABP.insere(capitulo);
 						
 						//Adiciona Inicio ou fim saltando o token com o espaço " "
 						token = b.nextToken();
