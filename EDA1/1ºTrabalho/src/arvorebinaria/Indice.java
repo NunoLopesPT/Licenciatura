@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 public class Indice{
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		String line;
 		String file="file.txt";
 		String token;
@@ -16,18 +16,18 @@ public class Indice{
 		try{
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			while ((line = br.readLine()) != null) {
-				if (line.substring(0,5).equals("IX: {")){
+				if (line.substring(0,5).equals("IX: {")) {
 					//Tira o "IX: {"
 					line = line.substring(5);
 					
 					//Se tiver subcapitulos
-					if (line.contains("!")){
+					if (line.contains("!")) {
 						StringTokenizer b = new StringTokenizer(line, "!", false);
 						token = b.nextToken();
 						
 						//Adiciona capitulo à ABP
 						capitulo = new Capitulo(token.substring(0, token.length()-1));
-						if (ABP.contains(capitulo)){
+						if (ABP.contains(capitulo)) {
 							capitulo = ABP.find(capitulo);
 							ABP.insere(capitulo);
 						}
@@ -48,11 +48,11 @@ public class Indice{
 						token = b.nextToken();
 						subCapitulo = new Capitulo(token.substring(1));
 						
-						if (capitulo.getSubcapitulos() == null){
+						if (capitulo.getSubcapitulos() == null) {
 							capitulo.setSubcapitulos(new ArvBin<Capitulo>());// = new ArvBin<Capitulo>(); 
 						}
 						
-						if (capitulo.getSubcapitulos().contains(subCapitulo)){
+						if (capitulo.getSubcapitulos().contains(subCapitulo)) {
 							subCapitulo = capitulo.getSubcapitulos().find(subCapitulo);
 							capitulo.getSubcapitulos().insere(subCapitulo);
 						}
@@ -63,19 +63,19 @@ public class Indice{
 						//Adiciona Inicio ou fim saltando o token com o espaço " "
 						token = b.nextToken();
 						//Inicio
-						if (token.equals("(")){
+						if (token.equals("(")) {
 							b.nextToken();
 							capitulo.getSubcapitulos().find(subCapitulo).setInicio(Integer.parseInt(b.nextToken()));
 							}
 						//Fim
-						else if (token.equals(")")){
+						else if (token.equals(")")) {
 							b.nextToken();
 							capitulo.getSubcapitulos().find(subCapitulo).setFim(Integer.parseInt(b.nextToken()));
 							}
 						//Ocorrencia
 						else{
 							token = b.nextToken();
-							if (capitulo.getSubcapitulos().find(subCapitulo).getOcorrencias() == null){
+							if (capitulo.getSubcapitulos().find(subCapitulo).getOcorrencias() == null) {
 								capitulo.getSubcapitulos().find(subCapitulo).setOcorrencias( new ArvBin<Integer>());
 							}
 							capitulo.getSubcapitulos().find(subCapitulo).getOcorrencias().insere(Integer.parseInt(token));
@@ -88,12 +88,12 @@ public class Indice{
 						StringTokenizer b = new StringTokenizer(line, "|{}" , false);
 						token = b.nextToken();
 						
-						if (token.charAt(token.length()-1) == ' '){
+						if (token.charAt(token.length()-1) == ' ') {
 							token = token.substring(0, token.length()-1);
 						}
 						//Adiciona Capitulo
 						capitulo = new Capitulo(token.substring(0, token.length()));
-						if (ABP.contains(capitulo)){
+						if (ABP.contains(capitulo)) {
 							capitulo = ABP.find(capitulo);
 							ABP.insere(capitulo);
 						}
@@ -104,19 +104,19 @@ public class Indice{
 						//Adiciona Inicio ou fim saltando o token com o espaço " "
 						token = b.nextToken();
 						//Inicio
-						if (token.equals("(")){
+						if (token.equals("(")) {
 							b.nextToken();
 							ABP.find(capitulo).setInicio(Integer.parseInt(b.nextToken()));
 						}
 						//Fim
-						else if (token.equals(")")){
+						else if (token.equals(")")) {
 							b.nextToken();
 							ABP.find(capitulo).setFim (Integer.parseInt(b.nextToken()));
 						}
 						//Ocorrencias
 						else {
 							token = b.nextToken();
-							if (ABP.find(capitulo).getOcorrencias() == null){
+							if (ABP.find(capitulo).getOcorrencias() == null) {
 								ABP.find(capitulo).setOcorrencias(new ArvBin<Integer>());
 							}
 							ABP.find(capitulo).getOcorrencias().insere(Integer.parseInt(token));
@@ -129,7 +129,7 @@ public class Indice{
 			br.close();
 		}
 		
-		catch(IOException e){ 
+		catch(IOException e) { 
 			System.out.println("Ups");
 		}
 		//Print da Arvore
