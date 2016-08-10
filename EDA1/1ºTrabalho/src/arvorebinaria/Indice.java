@@ -29,11 +29,8 @@ public class Indice{
 						capitulo = new Capitulo(token.substring(0, token.length()-1));
 						if (ABP.contains(capitulo)) {
 							capitulo = ABP.find(capitulo);
-							ABP.insere(capitulo);
 						}
-						else{
-							ABP.insere(capitulo);
-						}
+						ABP.insere(capitulo);
 						
 						//Remove os sinais que nao interessam e em principio
 						//Tem que dar 3 ou 4 tokens:
@@ -54,11 +51,8 @@ public class Indice{
 						
 						if (capitulo.getSubcapitulos().contains(subCapitulo)) {
 							subCapitulo = capitulo.getSubcapitulos().find(subCapitulo);
-							capitulo.getSubcapitulos().insere(subCapitulo);
 						}
-						else{
-							capitulo.getSubcapitulos().insere(subCapitulo);
-						}
+						capitulo.getSubcapitulos().insere(subCapitulo);
 						
 						//Adiciona Inicio ou fim saltando o token com o espaço " "
 						token = b.nextToken();
