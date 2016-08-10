@@ -107,6 +107,7 @@ public class ArvBin<E extends Comparable<? super E>> {
 		else if ((n.getElemento()).compareTo(x)==0) {
 			return null;
 		}
+
 		return n;
 	}
    
@@ -124,11 +125,11 @@ public class ArvBin<E extends Comparable<? super E>> {
 		else if (n.getElemento().compareTo(x)>0) {
 			remove(x, n.getEsq());
 		}
-		else if ( n.getEsq().getElemento() != null && n.getDir().getElemento() != null ) // Two children
+		else if (n.getEsq().getElemento() != null && n.getDir().getElemento() != null) // Two children
 		{
 			E min = findMin(n.getDir());
 			n.setElemento(min);
-			n.setDir(remove( min, n.getDir()));
+			n.setDir(remove(min, n.getDir()));
 		}
 		else if (n.getEsq().getElemento() == null) {
 			n = n.getDir();

@@ -17,18 +17,23 @@ public class Capitulo implements Comparable<Capitulo>{
 	
 	public String toString() {
 		String a = "";
-		a += nome + ": "; // "Serie: "
-    	if (inicio == fim) {
+		
+        a += nome + ": "; // "Serie: "
+    	
+        if (inicio == fim) {
     		if (inicio != 0) {
     			a += inicio ; //"Serie: 2"
     		}
     	}
+
     	else {
     		a += inicio + "-" + fim + " "; //"Serie: 2-4"
     	}
+
     	if (ocorrencias != null) { // Se tiver ocorrencias
             a += printOcorrencias();//"Serie: 4,5,6,7"
     	}
+
 		if (subcapitulos != null) {
 			a += printSubcapitulos(subcapitulos.raiz);
 		}
@@ -43,7 +48,7 @@ public class Capitulo implements Comparable<Capitulo>{
     	
         String a = "";
     	
-        a += printSubcapitulos( no.getEsq() );
+        a += printSubcapitulos(no.getEsq());
     	a += "\n";
     	a +=  "         " + no.getElemento().nome + ": ";
     	
@@ -60,7 +65,7 @@ public class Capitulo implements Comparable<Capitulo>{
 	    	a += no.getElemento().printOcorrencias();
     	}
     	
-        a += printSubcapitulos( no.getDir() );
+        a += printSubcapitulos(no.getDir());
     	
         return a;
 	}
@@ -77,7 +82,7 @@ public class Capitulo implements Comparable<Capitulo>{
      	}
    	    
         if (no.getEsq().getElemento() != null) {
-     		a += printOcorrencias( no.getEsq() );
+     		a += printOcorrencias(no.getEsq());
      	}
         
         if (!ocorrencias.raiz.getElemento().equals(no.getElemento())) {
@@ -87,7 +92,7 @@ public class Capitulo implements Comparable<Capitulo>{
         a += no.getElemento();
      	
      	if (no.getDir().getElemento() != null) {
-     		a += printOcorrencias( no.getDir() );
+     		a += printOcorrencias(no.getDir());
      	}
      	
      	return a;
