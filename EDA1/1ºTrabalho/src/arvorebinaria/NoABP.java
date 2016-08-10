@@ -2,7 +2,6 @@ package arvorebinaria;
 
 public class NoABP<E> {
 	private E elemento;
-	
 	private NoABP<E> esq;
 	private NoABP<E> dir;
 	
@@ -35,6 +34,4 @@ public class NoABP<E> {
 	public void setDir(NoABP<E> dir) {
 		this.dir = dir;
 	}
-	
-	
 }
