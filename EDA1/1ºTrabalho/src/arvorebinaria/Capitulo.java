@@ -42,7 +42,8 @@ public class Capitulo implements Comparable<Capitulo>{
     	}
     	
         String a = "";
-    	a += printSubcapitulos( no.getEsq() );
+    	
+        a += printSubcapitulos( no.getEsq() );
     	a += "\n";
     	a +=  "         " + no.getElemento().nome + ": ";
     	
@@ -64,7 +65,7 @@ public class Capitulo implements Comparable<Capitulo>{
         return a;
 	}
 	
-	public String printOcorrencias () {
+	public String printOcorrencias() {
     	return printOcorrencias(ocorrencias.raiz);
     }
      
@@ -74,10 +75,12 @@ public class Capitulo implements Comparable<Capitulo>{
      	if (no.getElemento() == null) { 
      		return "";
      	}
-   	    if (no.getEsq().getElemento() != null) {
+   	    
+        if (no.getEsq().getElemento() != null) {
      		a += printOcorrencias( no.getEsq() );
      	}
-     	if (!ocorrencias.raiz.getElemento().equals(no.getElemento())) {
+        
+        if (!ocorrencias.raiz.getElemento().equals(no.getElemento())) {
      		a += ", ";
      	}
      	
