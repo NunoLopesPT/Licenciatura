@@ -19,11 +19,9 @@ public class Capitulo implements Comparable<Capitulo>{
 		String a = "";
 		
 		a += nome + ": "; // "Serie: "
-		
-		if (inicio == fim) {
-			if (inicio != 0) {
+
+		if (inicio == fim && inicio != 0) {
 				a += inicio ; //"Serie: 2"
-			}
 		}
 
 		else {
@@ -52,10 +50,8 @@ public class Capitulo implements Comparable<Capitulo>{
 		a += "\n";
 		a +=  "         " + no.getElemento().nome + ": ";
 		
-		if (no.getElemento().inicio == no.getElemento().fim) {
-			if (no.getElemento().inicio != 0) {
+		if (no.getElemento().inicio == no.getElemento().fim && no.getElemento().inicio != 0) {
 				a += no.getElemento().inicio ;	
-			}
 		}
 		else {
 			a += no.getElemento().inicio + "-" + fim + " ";
