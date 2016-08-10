@@ -20,13 +20,6 @@ public class Capitulo implements Comparable<Capitulo>{
 		
 		a += nome + ": "; // "Serie: "
 		
-
-
-
-
-
-
-		
 		if (inicio == fim) {
 			if (inicio != 0) {
 				a += inicio ; //"Serie: 2"
