@@ -5,7 +5,7 @@ public class NoABP<E> {
 	private NoABP<E> esq;
 	private NoABP<E> dir;
 	
-	public NoABP(E elemento, NoABP<E> esq, NoABP<E> dir){
+	public NoABP(E elemento, NoABP<E> esq, NoABP<E> dir) {
 		this.elemento = elemento;
 		this.dir = dir;
 		this.esq = esq;
