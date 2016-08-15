@@ -13,7 +13,7 @@ public class Indice{
 		Capitulo capitulo;
 		Capitulo subCapitulo;
 		
-		try{
+		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			while ((line = br.readLine()) != null) {
 				if (line.substring(0,5).equals("IX: {")) {
@@ -67,7 +67,7 @@ public class Indice{
 							capitulo.getSubcapitulos().find(subCapitulo).setFim(Integer.parseInt(b.nextToken()));
 							}
 						//Ocorrencia
-						else{
+						else {
 							token = b.nextToken();
 							if (capitulo.getSubcapitulos().find(subCapitulo).getOcorrencias() == null) {
 								capitulo.getSubcapitulos().find(subCapitulo).setOcorrencias( new ArvBin<Integer>());
@@ -90,6 +90,7 @@ public class Indice{
 						if (ABP.contains(capitulo)) {
 							capitulo = ABP.find(capitulo);
 						}
+
 						ABP.insere(capitulo);
 						
 						//Adiciona Inicio ou fim saltando o token com o espaço " "
@@ -116,12 +117,12 @@ public class Indice{
 				}
 			}
 		br.close();
-			}
+		}
 			
 		catch(IOException e) { 
 			System.out.println("Ups");
 		}
-		
+
 		//Print da Arvore
 		System.out.println(ABP.printEmOrdem());
 	}
