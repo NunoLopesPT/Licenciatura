@@ -76,7 +76,7 @@ public class Indice{
 						}
 						capitulo = null;
 					}
-					else{
+					else {
 						//Se nao tiver subcapitulos, passa diretamente 
 						//para a parte onde se separam os sinais que nao interessa
 						StringTokenizer b = new StringTokenizer(line, "|{}" , false);
@@ -111,18 +111,17 @@ public class Indice{
 								ABP.find(capitulo).setOcorrencias(new ArvBin<Integer>());
 							}
 							ABP.find(capitulo).getOcorrencias().insere(Integer.parseInt(token));
-							
 						}
 					}
-					
 				}
 			}
-			br.close();
-		}
-		
+		br.close();
+			}
+			
 		catch(IOException e) { 
 			System.out.println("Ups");
 		}
+		
 		//Print da Arvore
 		System.out.println(ABP.printEmOrdem());
 	}
