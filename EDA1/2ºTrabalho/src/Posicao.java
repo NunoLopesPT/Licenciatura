@@ -1,4 +1,3 @@
-
 public class Posicao {
 	private char letra;
 	private int coluna;
