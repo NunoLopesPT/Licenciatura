@@ -1,10 +1,8 @@
-
-
 public abstract class HashTable<T> {
 	Elemento<T>[] TabelaElementos;
 	int ocupados = 0;
 
-	public HashTable(){
+	public HashTable() {
 		this(11);
 	}
 	
@@ -25,7 +23,7 @@ public abstract class HashTable<T> {
 		return ocupados;
 	}
 	
-	public float factorCarga(){
+	public float factorCarga() {
 		return TabelaElementos.length - ocupados();
 	}
 	
@@ -52,7 +50,7 @@ public abstract class HashTable<T> {
 
 		return TabelaElementos[procPos(x)];
 	}
-	
+
 	//retorna o elemento que esta na tabela , se x não está lá
 	//retorna null
 	public boolean contains(T x) {
@@ -63,7 +61,7 @@ public abstract class HashTable<T> {
 		return true;
 	}
 	
-	public void remove(T x){
+	public void remove(T x) {
 		TabelaElementos[procPos(x)] = null;
 	}
 	//remove o elemento da tabela

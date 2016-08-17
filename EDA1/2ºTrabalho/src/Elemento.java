@@ -1,5 +1,3 @@
-
-
 public class Elemento<T> {
 	public T elemento;
 	public boolean ativo;
