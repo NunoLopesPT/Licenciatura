@@ -11,21 +11,21 @@ public class Teste {
 		Boggle b = new Boggle(b1,a);
 
 		try {
-	    	BufferedReader br = new BufferedReader(new FileReader(file));
-	    	
-	    	while ((line = br.readLine()) != null) {
-	    		for (int i = 1; i <= line.length() ; i++) {
-	    			
-	    			boolean c = (i != line.length());
-	    			a.insere(line.substring(0, i), c);
-	    		}
-	    	}
+			BufferedReader br = new BufferedReader(new FileReader(file));
+			
+			while ((line = br.readLine()) != null) {
+				for (int i = 1; i <= line.length() ; i++) {
+					
+					boolean c = (i != line.length());
+					a.insere(line.substring(0, i), c);
+				}
+			}
 
-	    	br.close();
+			br.close();
 		}
 		catch (IOException e) { 
-	    	System.out.println("Ups");
-	    }
+			System.out.println("Ups");
+		}
 
 		b.hashtable = a;
 		b.solve();

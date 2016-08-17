@@ -17,11 +17,9 @@ public class Boggle {
 	ArrayList<Posicao> palavras = new ArrayList<Posicao>(16);
 	int index = 0;
 
-	
 	public void solve() {
 		for (int i = 0; i < 4 ; i++) {
 			for (int j = 0; j < 4; j++) {
-				
 				Posicao x = boggle[i][j];
 				x.setRepetido(true);
 				
@@ -47,7 +45,6 @@ public class Boggle {
 		}
 
 		if (!palavra.prefixo && palavra.elemento.length() >= 3) { // Se houver faz o print da mesma
-
 			String solucao = palavra + " ";
 
 			for (int i = 0; i < index ; i++) {
@@ -62,17 +59,15 @@ public class Boggle {
 		
 		for (int i = -1 ; i <= 1 ; i++) {
 			for (int j = -1 ; j <= 1 ; j++) {
-				
 				int proximacoluna = coluna + i;
 				int proximalinha = linha + j;
 				
 				if (proximacoluna >= 0 && proximacoluna < 4 &&
-						proximalinha >= 0 && proximalinha < 4) {
+					proximalinha >= 0 && proximalinha < 4) {
 					
 					Posicao x = boggle[proximacoluna][proximalinha];
 					
 					if (!x.isRepetido()) {
-						
 						x.setRepetido(true);
 						palavras.set(x, index);
 						index++;	

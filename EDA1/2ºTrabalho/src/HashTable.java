@@ -89,14 +89,14 @@ public abstract class HashTable<T> {
 	}
 	
 	public long SDBMHash(String str) {
-	      long hash = 0;
+		long hash = 0;
 
-	      for (int i = 0; i < str.length(); i++) {
-	         hash = str.charAt(i) + (hash << 6) + (hash << 16) - hash;
-	      }
+		for (int i = 0; i < str.length(); i++) {
+			hash = str.charAt(i) + (hash << 6) + (hash << 16) - hash;
+		}
 
-	      return hash;
-	   }
+		return hash;
+	}
 	
 	@SuppressWarnings("unchecked")
 	public void rehash() {
@@ -116,4 +116,4 @@ public abstract class HashTable<T> {
 			System.out.println(i +": " + TabelaElementos[i]);
 		}
 	}
-}
+}	

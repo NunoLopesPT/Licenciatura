@@ -4,7 +4,7 @@ public class Posicao {
 	private int linha;
 	private boolean repetido;
 	
-	public Posicao(char letra,int coluna, int linha, boolean repetido) {
+	public Posicao(char letra, int coluna, int linha, boolean repetido) {
 		this.letra = letra;
 		this.coluna = coluna;
 		this.linha = linha;
