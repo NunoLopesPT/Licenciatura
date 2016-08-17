@@ -5,46 +5,46 @@ public class Posicao {
 	private int linha;
 	private boolean repetido;
 	
-	public Posicao(char letra,int coluna, int linha, boolean repetido){
+	public Posicao(char letra,int coluna, int linha, boolean repetido) {
 		this.letra = letra;
 		this.coluna = coluna;
 		this.linha = linha;
 		this.repetido = repetido;
 	}
 	
-	public String toString(){
+	public String toString() {
 		return "" + letra;
 	}
 
-	public char getLetra(){
+	public char getLetra() {
 		return letra;
 	}
 
-	public void setLetra(char letra){
+	public void setLetra(char letra) {
 		this.letra = letra;
 	}
 
-	public int getColuna(){
+	public int getColuna() {
 		return coluna;
 	}
 
-	public void setColuna(int coluna){
+	public void setColuna(int coluna) {
 		this.coluna = coluna;
 	}
 
-	public int getLinha(){
+	public int getLinha() {
 		return linha;
 	}
 
-	public void setLinha(int linha){
-		this.linha = linha;
+	public void setLinha(int linha) {
+		this.linha = linha; 
 	}
 
-	public boolean isRepetido(){
+	public boolean isRepetido() {
 		return repetido;
 	}
 
-	public void setRepetido(boolean repetido){
+	public void setRepetido(boolean repetido) {
 		this.repetido = repetido;
 	}
 	

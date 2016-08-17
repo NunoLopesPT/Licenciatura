@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Teste {
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		String file = "dicionario.txt";
 		String line;
 		LinHashTable<String> a = new LinHashTable<String>(1000000);
@@ -14,15 +14,16 @@ public class Teste {
 	    	BufferedReader br = new BufferedReader(new FileReader(file));
 	    	
 	    	while ((line = br.readLine()) != null) {
-	    		for(int i = 1; i <= line.length() ; i++) {
+	    		for (int i = 1; i <= line.length() ; i++) {
 	    			
 	    			boolean c = (i != line.length());
 	    			a.insere(line.substring(0, i), c);
 	    		}
 	    	}
+
 	    	br.close();
 		}
-		catch(IOException e) { 
+		catch (IOException e) { 
 	    	System.out.println("Ups");
 	    }
 
