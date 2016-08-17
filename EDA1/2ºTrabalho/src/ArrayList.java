@@ -4,7 +4,7 @@ public class ArrayList<E> {
 	private int tamanho;
 	
 	@SuppressWarnings("unchecked")
-	public ArrayList(int tamanho){
+	public ArrayList(int tamanho) {
 		if (tamanho < 0) {
 			throw new IllegalArgumentException();
 		}
@@ -65,7 +65,7 @@ public class ArrayList<E> {
 
 		return false;
 	}
-	
+
 	public int procurar(E x) {
 		for (int i = 0; i < tamanho; i++) {
 			if (x.equals(array[i])) {
